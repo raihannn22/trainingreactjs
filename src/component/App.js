@@ -1,4 +1,4 @@
-import "./App.css";
+import "../App.css"
 import { useState, useEffect, useMemo } from "react";
 import Button from "./button";
 import Genap from "./genap";
@@ -10,15 +10,15 @@ function App() {
   const [text, setText] = useState("Hello, React!");
   const label = "CLLICKK";
   const [click, setClick] = useState(0);
+  const [count, setCount] = useState(0);
 
   const Button2 = () => {
-    const [count, setCount] = useState(0);
     return (
       <div>
         <h2> angka </h2>
         <p> jumlah : {count} </p>
         <button onClick={() => setCount(count + 1)}>Tambah angka</button>
-        <button onClick={() => setCount(count / 2)}>reset</button>
+        <button onClick={() => setCount(count / 2)}>Bagi dua</button>
       </div>
     );
   };
@@ -44,14 +44,6 @@ function App() {
       </div>
     );
   };
-
-  // useEffect(() => {
-  //   if (click === 5) {
-  //     console.log("ini yang ke lima");
-  //   } else {
-  //     console.log("jumlah = ", click);
-  //   }
-  // }, [click]);
 
   const result2 = useMemo(() => {
     if (click === 0) {
